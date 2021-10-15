@@ -4,14 +4,15 @@
 using namespace std;
 
 int main() {
-	double i = 1.0;
-	double k;
+	int k;
+	double d2;
+
+
 	double d1 = 1.0;
-	double d2 = 1.0;
-
-	k = i;
-
+	int i = 1;
 	while (i <= 15) {
+		d2 = 1.0;
+		k = i;
 		while (k <= 30 - i) {
 			d2 *= (sin(i * k * k) + cos(i * i * k)) / (k * k + i * i);
 			k++;
@@ -21,15 +22,13 @@ int main() {
 	}
 	cout << d1 << endl;
 
-	i = 1.0;
-	k = i;
 	d1 = 1.0;
-	d2 = 1.0;
-
-
-
+	i = 1;
 	do {
+		d2 = 1.0;
+		k = i;
 		do {
+
 			d2 *= (sin(i * k * k) + cos(i * i * k)) / (k * k + i * i);
 			k++;
 		} while (k <= 30 - i);
@@ -39,13 +38,10 @@ int main() {
 
 	cout << d1 << endl;
 
-	i = 1.0;
-	k = i;
 	d1 = 1.0;
-	d2 = 1.0;
-
-	for(i = 1.0; i <= 15; i++) {
-		for (k = i; k <= 30 - i; k++) {
+	for (int i = 1; i <= 15; i++) {
+		d2 = 1.0;
+		for (int k = i; k <= 30 - i; k++) {
 			d2 *= (sin(i * k * k) + cos(i * i * k)) / (k * k + i * i);
 		}
 		d1 *= d2;
@@ -53,13 +49,11 @@ int main() {
 
 	cout << d1 << endl;
 
-	i = 1.0;
-	k = i;
-	d1 = 1.0;
-	d2 = 1.0;
 
-	for(i = 15; i >= 1; i--) {
-		for (k = 30 - i; k >= i; k--) {
+	d1 = 1.0;
+	for (int i = 15; i >= 1; i--) {
+		d2 = 1.0;
+		for (int k = 30 - i; k >= i; k--) {
 			d2 *= (sin(i * k * k) + cos(i * i * k)) / (k * k + i * i);
 		}
 		d1 *= d2;
@@ -68,4 +62,5 @@ int main() {
 
 
 	return 0;
+
 }
